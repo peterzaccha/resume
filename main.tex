@@ -1,0 +1,208 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Curriculum Vitae
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: July 2011
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+% \usepackage{url}
+\usepackage[hidelinks]{hyperref}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{Black}{%
+			\parbox{6em}{%
+			\hfill\color{White}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\ProjectEntry}[2]{
+		\noindent \textbf{#1} \hfill      % Name
+		
+		\noindent\hangindent=2em\hangafter=0 \small #2 % Description
+		\normalsize \par}
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+\MyName{Peter Safwat}
+\MySlogan{Software Engineer}
+
+\sepspace
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Personal details}{}
+
+\PersonalEntry{Birth}{March 23, 1998}
+\PersonalEntry{Address}{Imbaba, Giza}
+\PersonalEntry{Phone}{0120 6284 377}
+\PersonalEntry{Mail}{\url{p.pator@outlook.com}}
+\PersonalEntry{Github}{\href{https://github.com/peter44322}{github.com/peter44322}}
+\PersonalEntry{LinkedIn}{\href{https://linkedin.com/in/peterzacch}{linkedin.com/in/peterzacch}}
+
+% Summary
+\NewPart{Summary}{I learned how to code when i was 13, after i wrote my first programme using VB.net with only one Button and a silly message that opens when the button is clicked i knew what I want to be. since then i've been passinate about Programming and how computer works. i learned so much and i'm still learning.}
+% Life Philosophy
+\NewPart{Life Philosophy}{however difficult life may seem, there is always something you can do, and succeed at. It matters that you don’t just give up - Stephen Hawking}
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+
+\EducationEntry{BCS. Faculty of computer and artificial intelligence}{2016-2020}{Cairo
+  University}{Major - Computer science \\ Minor - Information systems}
+\sepspace
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Work experience}{}
+
+\WorkEntry{Software Engineer}{2018-present}{Bee Interactives., Full-time}{
+\begin{itemize}
+\item Worked with alot of technolgies
+\item Helped designing many major projects 
+\item Worked on the World Youth Forum Registeration website
+\end{itemize}
+
+}
+
+
+\WorkEntry{Backend Developer}{2017-2018}{Egyadv., Full-time}{JavaScript and Php Developer i worked on an internal project using laravel framework }
+
+\sepspace
+\WorkEntry{Programming Instructor}{2017-2018}{Pharaonic Technology Systems., Part-time}{I worked as Programming Instructor for python, scratch and arduino.}
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Skills}{
+\SkillsEntry{Languages}{Arabic (mother tongue)}
+\SkillsEntry{}{English (professional)}
+
+
+\SkillsEntry{Software}{\textsc{Python}, \textsc{JavaScript},  \textsc{SQL}, \textsc{C++}, \textsc{React}, \textsc{Laravel}, \textsc{PHP}, \textsc{Java}}
+}
+\SkillsEntry{}{\textsc{HTML}, \textsc{CSS}, \LaTeX}
+
+
+
+\NewPart{projects}{
+\ProjectEntry{\href{https://wyfegypt.com/}{World Youth Forum}}{A System that helped the WYF organizers filter and validate all the canidates for the Forum, with a very large database operation we over come many preformance challenges}
+\ProjectEntry{\href{https://orange-sonetelhaya.com/}{Orange sonetelhaya}}{A Video Generator, I Worked in this project as a fullstack, 
+\begin{itemize}
+ \item creating the frontend using react
+ \item in order to preview the video in a short time we used Lottie.js.
+ \item and we recorded the video using node.js, puppeteer and FFmpeg.
+ \item we used websockets to give realtime feedback to the user.
+\end{itemize}
+}
+
+\ProjectEntry{\href{https://github.com/peter44322/dy-form}{DyForm}}{An Open source Laravel package to helpand  create dynamic forms with high preformance insert and retrive operations.}
+}
+
+\ProjectEntry{\href{https://github.com/peter44322/laravel-completeness-checker}{Completeness Checker}}{An Open source Laravel package to help track the completeness of an entity ,it calculate how many fields the user has filled and it generate a percentage of completeness.}
+
+\ProjectEntry{\href{https://github.com/peter44322/Swaggerator}{Swaggerator}}{An Open source Laravel package to help  Developers document their APIS With a bunch of easy commands.}
+
+
+\NewPart{Books \& Courses}{
+\SkillsEntry{Books}{Clean Code - Robert Cecil Martin}
+\SkillsEntry{}{The Nature of Code - Daniel Shiffman}
+\SkillsEntry{}{Head First Design Patterns - Elisabeth Freeman and Kathy Sierra}
+
+
+\SkillsEntry{Courses}{CS50's Introduction to Computer Science - Harvard}
+\SkillsEntry{}{Good Parts of JavaScript and the Web - Douglas Crockford}
+\SkillsEntry{}{THE ODIN PROJECT}
+\SkillsEntry{}{Web Development - Udacity}
+
+
+%%% References
+%%% ------------------------------------------------------------
+\NewPart{Publication}{}
+\begin{itemize}
+ \item \href{https://medium.com/@p.patorgx/laravel-dynamic-database-74ac7adf66d}{Laravel dynamic databases - Medium Article}
+\end{itemize}
+
+%%% References
+%%% ------------------------------------------------------------
+\NewPart{References}{Available upon request}
+\end{document}
