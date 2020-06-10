@@ -34,7 +34,7 @@
 	\textheight=700px                    % Saving trees ;-)
 % \usepackage{url}
 \usepackage[hidelinks]{hyperref}
-
+\usepackage{multicol}
 \frenchspacing              % Better looking spacings after periods
 \pagestyle{empty}           % No pagenumbers/headers/footers
 
@@ -52,9 +52,19 @@
 \settowidth{\spacebox}{8888888888}			% Box to align text
 \newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
 
-\newcommand{\MyName}[1]{ % Name
-		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
-		\par \normalsize \normalfont}
+\newcommand{\MyName}[3]{ % Name
+\begin{multicols}{2}
+		 #3
+		\columnbreak
+
+
+		 \Huge \usefont{OT1}{phv}{b}{n}  \hfill #1
+		\par \normalsize \normalfont
+		
+		#2
+		
+				\end{multicols}
+		}
 		
 \newcommand{\MySlogan}[1]{ % Slogan (optional)
 		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
@@ -63,7 +73,7 @@
 \newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
 
 \newcommand{\PersonalEntry}[2]{
-		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\noindent\hangindent=1em\hangafter=0 % Indentation
 		\parbox{\spacebox}{        % Box to align text
 		\textit{#1}}		       % Entry name (birth, address, etc.)
 		\hspace{1.5em} #2 \par}    % Entry value
@@ -99,31 +109,65 @@
 %%% ------------------------------------------------------------
 \begin{document}
 % you can upload a photo and include it here...
-%\begin{wrapfigure}{l}{0.5\textwidth}
-%	\vspace*{-2em}
-%		\includegraphics[width=0.15\textwidth]{photo}
-%\end{wrapfigure}
+% \begin{wrapfigure}{l}{0.5\textwidth}
+% 	\vspace*{-2em}
+% 		\includegraphics[width=0.15\textwidth]{photo}
+% \end{wrapfigure}
 
-\MyName{Peter Safwat}
-\MySlogan{Software Engineer}
-
-\sepspace
-
-%%% Personal details
-%%% ------------------------------------------------------------
-\NewPart{Personal details}{}
-
+\MyName{Peter Safwat}{\MySlogan{Software Engineer}
+}{
 \PersonalEntry{Birth}{March 23, 1998}
 \PersonalEntry{Address}{Imbaba, Giza}
 \PersonalEntry{Phone}{0120 6284 377}
 \PersonalEntry{Mail}{\url{p.pator@outlook.com}}
 \PersonalEntry{Github}{\href{https://github.com/peter44322}{github.com/peter44322}}
 \PersonalEntry{LinkedIn}{\href{https://linkedin.com/in/peterzacch}{linkedin.com/in/peterzacch}}
+}
 
-% Summary
-\NewPart{Summary}{I learned how to code when I was 13. after I wrote my first program using VB.net with only one Button and a silly message that opens when the button is clicked i knew what I want to be. since then I've been passionate about programming and how computers work. I learned so much and I'm still learning.}
-% Life Philosophy
-\NewPart{Life Philosophy}{however difficult life may seem, there is always something you can do, and succeed at. It matters that you don’t just give up - Stephen Hawking}
+
+% 
+% \NewPart{Summary}{I learned how to code when I was 13. after I wrote my first program using VB.net with only one Button and a silly message that opens when the button is clicked i knew what I want to be. since then I've been passionate about programming and how computers work. I learned so much and I'm still learning.}
+
+\NewPart{Summary}{I'm +3 years expriance Software Engineer, i start coding when i was 13, programming is more than a job for me it is a hoppy. i'm a self-motivated ,creative ,problem solver and determined Engineer. my objective is to contribute more to the open source community. }
+
+
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Work experience}{
+
+\WorkEntry{Software Engineer}{2018-present}{Bee Interactives., Full-time}{
+\begin{itemize}
+\item Developing and directing software system validation and testing methods.
+\item Analyzing data to effectively coordinate the installation of new systems or the modification of existing systems.
+\item Managing the software development lifecycle.
+\item Developing and executing project plans.
+\item Applying mathematics and statistics to problem-solving initiatives.
+\item Applying best practices and standard operating procedures.
+\end{itemize}
+}
+
+
+\WorkEntry{Backend Developer}{2017-2018}{Egyadv., Full-time}{
+\begin{itemize}
+\item Main focus on coding and debugging
+\item Build high-quality reusable code that can be used in thew future
+\item Develop functional and sustainable web applications with clean codes
+\item Define and communicate technical and design requirements
+\item Collaborate with Front-end developers 
+\end{itemize}
+}
+
+\sepspace
+\WorkEntry{Programming Instructor}{2017-2018}{Pharaonic Technology Systems., Part-time}{
+\begin{itemize}
+\item Provide hands-on instruction and practical training in Java, Python, and Arduino.
+\item Teach courses from beginning level to advance.
+\item Create instructional materials
+\end{itemize}
+}
+
+}
 
 %%% Education
 %%% ------------------------------------------------------------
@@ -133,36 +177,25 @@
   University}{Major - Computer science \\ Minor - Information systems}
 \sepspace
 
-%%% Work experience
-%%% ------------------------------------------------------------
-\NewPart{Work experience}{}
-
-\WorkEntry{Software Engineer}{2018-present}{Bee Interactives., Full-time}{
-\begin{itemize}
-\item Worked with a lot of technologies
-\item Helped designing many major projects 
-\item Worked on the World Youth Forum Registration website
-\end{itemize}
-
-}
-
-
-\WorkEntry{Backend Developer}{2017-2018}{Egyadv., Full-time}{JavaScript and Php Developer i worked on an internal project using laravel framework }
-
-\sepspace
-\WorkEntry{Programming Instructor}{2017-2018}{Pharaonic Technology Systems., Part-time}{I worked as Programming Instructor for python, scratch and arduino.}
 %%% Skills
 %%% ------------------------------------------------------------
 \NewPart{Skills}{
 \SkillsEntry{Languages}{Arabic (mother tongue)}
 \SkillsEntry{}{English (professional)}
 
+\sepspace
+\SkillsEntry{Programming Languages}{\textsc{Python}, \textsc{JavaScript},  \textsc{C\#}, \textsc{C++},  \textsc{PHP}, \textsc{Java}}
+\sepspace
 
-\SkillsEntry{Software}{\textsc{Python}, \textsc{JavaScript},  \textsc{SQL}, \textsc{C++}, \textsc{React}, \textsc{Laravel}, \textsc{PHP}, \textsc{Java}}
+
+\SkillsEntry{Databases}{\textsc{MySql}, \textsc{postgresql}, \textsc{mongodb}, \textsc{Redis}}
+
+\sepspace
+
+
+\SkillsEntry{Frameworks}{\textsc{Laravel}, \textsc{Reactjs}, \textsc{Angular}, \textsc{Django}, \textsc{express}, \textsc{Ruby on Rails}}
+
 }
-\SkillsEntry{}{\textsc{HTML}, \textsc{CSS}, \LaTeX}
-
-
 
 \NewPart{projects}{
 \ProjectEntry{\href{https://wyfegypt.com/}{World Youth Forum}}{A System that helped the WYF organizers filter and validate all the candidates for the Forum, with a very large database operation we overcome many performance challenges}
@@ -174,13 +207,75 @@
  \item we used WebSockets to give realtime feedback to the user.
 \end{itemize}
 }
-
-\ProjectEntry{\href{https://github.com/peter44322/dy-form}{DyForm}}{An Open source Laravel package to help create dynamic forms with high-performance insert and retrieve operations.}
+\ProjectEntry{\href{https://react-dijkstra.now.sh}{Dijkstra Visualization}}{
+An Interactive Dijkstra Algorithm Visualization tool using react and vis.js. visualize the solution of max flow problem and shorts pathh
 }
+
+\ProjectEntry{\href{http://pickscourier.com}{Picks courier}}{
+descriptionPicks courier is a start-up based in Cairo, Egypt. it offers delivery solutions to individuals, SMEs, and corporates. We own and manage a highly professional courier network through an innovative business model.}
+
+
+\ProjectEntry{\href{https://github.com/peter44322/p5js-search}{Game Ai}}{An Ai For a searching game it uses prolog to make tree of game states. it also has an interactive ui for setting the intial state of the game and show the solution.}
+
+\ProjectEntry{\href{https://github.com/peter44322/lexical-analyzer}{C Lexical Analyzer}}{
+Python Lexical Analyzer for c syntax. it uses the magic of regex to edintify the syntax and cateogrize them.
+}
+
+
+\ProjectEntry{\href{https://github.com/peter44322/react-songs-app}{Music Player}}{
+Web Music Player Using nextjs and napster Apis.
+}
+
+\ProjectEntry{\href{https://github.com/peter44322/KingsMen}{KingsMen}}{
+An Express.js Cloths shop Web app with mongodb database
+}
+
+\ProjectEntry{\href{https://github.com/peter44322/vector-quantization}{Vector quantization}}{
+Java Impelmentation for the Vector quantization Compress Algorithm.
+}
+
+\ProjectEntry{\href{https://github.com/peter44322/FuzzyToolBox}{Fuzzy ToolBox}}{
+Fuzzy Logic Impelmentation in Python with a graph plotter
+}
+
+\ProjectEntry{\href{https://github.com/peter44322/adaptive-huffman-coding}{Adaptive huffman coding}}{
+Java Impelmentation for Adaptive huffman Compression Algorithm.}
+
+\ProjectEntry{\href{https://github.com/peter44322/smooth-curve-fitting-genetic-algorithm}{smooth curve fitting}}{
+Python genetic Algorithm used to fit a curve giving some points and graph them.}
+
+\ProjectEntry{\href{https://github.com/peter44322/Knapsack-genetic-algorithm}{Knapsack genetic algorithm}}{Solving the Knapsack problem using genatic algorithm.}
+
+
+\ProjectEntry{\href{https://github.com/peter44322/reactjs-tic-tac-toe}{Tic tac toe Game}}{Reactjs Tic Tac Toe Game}
+
+
+
+\ProjectEntry{\href{https://github.com/peter44322/calculating-pi-by-collision}{Calculating pi by collisions}}{A Visualization for calculating the digits of pi using elastic collisions between two objects of different masses and a wall. Let me explain with this diagram.}
+
+\ProjectEntry{\href{https://github.com/peter44322/CryptoMail}{CryptoMail}}{Secure nodejs Mail server implemented using blockchanin with peer to peer archticture.}
+
+}
+
+
+
+\NewPart{open source packages}{
+\ProjectEntry{\href{https://github.com/peter44322/dy-form}{DyForm}}{An Open source Laravel package to help create dynamic forms with high-performance insert and retrieve operations.}
+
 
 \ProjectEntry{\href{https://github.com/peter44322/laravel-completeness-checker}{Completeness Checker}}{An Open source Laravel package to help track the completeness of an entity, it calculate how many fields the user has filled and it generates a percentage of completeness.}
 
 \ProjectEntry{\href{https://github.com/peter44322/Swaggerator}{Swaggerator}}{An Open source Laravel package to help  Developers document their APIS With a bunch of easy commands.}
+
+\ProjectEntry{\href{https://github.com/peter44322/JoQueryGenerator}{JoQueryGenerator}}{An open source laravel package to help obtomizing datatables query. with the help of the colvis addon it joins table conditionaly.}
+
+\ProjectEntry{\href{https://github.com/peter44322/html-extractor}{Html Extractor}}{Nodejs tool for extracting html ,js ,css files from a giving url}
+
+
+\ProjectEntry{Vast Converter}{Converter for converting vast xml files version 1 to vast version 2}
+
+
+}
 
 
 \NewPart{Books \& Courses}{
@@ -201,6 +296,9 @@
 \begin{itemize}
  \item \href{https://medium.com/@p.patorgx/laravel-dynamic-database-74ac7adf66d}{Laravel dynamic databases - Medium Article}
 \end{itemize}
+
+% Life Philosophy
+\NewPart{Life Philosophy}{however difficult life may seem, there is always something you can do, and succeed at. It matters that you don’t just give up - Stephen Hawking}
 
 %%% References
 %%% ------------------------------------------------------------
